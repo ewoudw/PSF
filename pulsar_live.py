@@ -97,7 +97,7 @@ while True:
         plotarray = np.roll(plotarray,1)
         plotarray[0] = newdatapoint/countmod
         # plot the current time normalized
-        points.set_data(xpoints,plotarray)
+        points.set_data(xpoints,plotarray/np.avg(plotarray))
         fig.canvas.restore_region(background)
         ax.draw_artist(points)
         fig.canvas.blit(ax.bbox)
